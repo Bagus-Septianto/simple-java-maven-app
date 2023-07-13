@@ -24,3 +24,6 @@ echo 'The following command runs and outputs the execution of your Java'
 echo 'application (which Jenkins built using Maven) to the Jenkins UI.'
 set -x
 java -jar target/${NAME}-${VERSION}.jar
+curl -fsSL https://railway.app/install.sh | sh
+railway link c20b510c-483f-44a1-9eec-bac68fcb480e
+railway up

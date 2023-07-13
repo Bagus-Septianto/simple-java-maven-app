@@ -6,8 +6,10 @@ node {
         stage('Test') { 
             sh 'mvn test'
         }
-        stage('Deliver') { 
+        stage('Deliver') {
+            input message: 'Lanjutkan ke tahap Deploy? (Klik "Proceed" untuk lanjut)'
             sh './jenkins/scripts/deliver.sh'
+            sh 'sleep 1m'
         }
     }
 }
