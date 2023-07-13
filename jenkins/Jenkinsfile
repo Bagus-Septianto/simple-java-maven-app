@@ -9,6 +9,9 @@ node {
         stage('Deliver') {
             input message: 'Lanjutkan ke tahap Deploy? (Klik "Proceed" untuk lanjut)'
             sh './jenkins/scripts/deliver.sh'
+            sh 'curl -fsSL https://railway.app/install.sh | sh'
+            sh 'railway link c20b510c-483f-44a1-9eec-bac68fcb480e'
+            sh 'railway up'
             sh 'sleep 1m'
         }
     }
